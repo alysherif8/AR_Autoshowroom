@@ -9,6 +9,7 @@ public class ARPlacementController : MonoBehaviour
     private GameObject spawnedObject;
     private ARRaycastManager raycastManager;
     private static List<ARRaycastHit> hits = new List<ARRaycastHit>();
+    private bool isPlaced = false;
 
     void Awake()
     {
@@ -17,21 +18,40 @@ public class ARPlacementController : MonoBehaviour
 
     void Update()
     {
-        if (Input.touchCount == 0) return;
+        if (isPlaced)
+            return;
 
-        Touch touch = Input.GetTouch(0);
-        if (raycastManager.Raycast(touch.position, hits, TrackableType.PlaneWithinPolygon))
+        Vector2 touchPosition;
+
+#if UNITY_EDITOR
+        if (Input.GetMouseButtonDown(0))
+        {
+            touchPosition = Input.mousePosition;
+        }
+        else
+        {
+            return;
+        }
+#else
+        if (Input.touchCount == 0)
+            return;
+
+        touchPosition = Input.GetTouch(0).position;
+#endif
+
+        if (raycastManager.Raycast(touchPosition, hits, TrackableType.PlaneWithinPolygon))
         {
             Pose hitPose = hits[0].pose;
 
-            if (spawnedObject == null)
-            {
-                spawnedObject = Instantiate(placedPrefab, hitPose.position, hitPose.rotation);
-            }
-            else
-            {
-                spawnedObject.transform.position = hitPose.position;
-            }
+            Vector3 adjustedPosition = hitPose.position;
+            adjustedPosition.y = 0.1f; // optional height control
+
+            Quaternion uprightRotation = Quaternion.Euler(0, hitPose.rotation.eulerAngles.y, 0);
+
+            spawnedObject = Instantiate(placedPrefab, adjustedPosition, uprightRotation);
+            isPlaced = true;
+
+            Debug.Log("Car placed at: " + adjustedPosition);
         }
     }
 }
