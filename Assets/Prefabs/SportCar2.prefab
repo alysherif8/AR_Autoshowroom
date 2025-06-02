@@ -677,6 +677,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1894404873762034047}
+  - component: {fileID: -8949051587765673486}
   m_Layer: 0
   m_Name: SportCar2
   m_TagString: Untagged
@@ -707,3 +708,25 @@ Transform:
   - {fileID: 1894404873762034023}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-8949051587765673486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894404873762196831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c8553981bf84674ba789c0ed6b5c0e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paintOptions:
+  - {fileID: 2100000, guid: 07f44fe3e9c462146a7769b976c50ec4, type: 2}
+  - {fileID: 2100000, guid: d2344366b80fe3d4f886ec412e0174fa, type: 2}
+  - {fileID: 2100000, guid: c4c2ee3e832cffd48bb9d156c2b21376, type: 2}
+  - {fileID: 2100000, guid: 104696f8b5f23d24586d858b68916bdc, type: 2}
+  - {fileID: 2100000, guid: 74196cf5d503c14488ae1ef1dbc6c9a4, type: 2}
+  carRenderers:
+  - {fileID: 1894404873764459421}
+  - {fileID: 1894404873764459419}
+  - {fileID: 1894404873764459423}
