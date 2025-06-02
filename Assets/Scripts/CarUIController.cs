@@ -5,9 +5,10 @@ public class CarUIController : MonoBehaviour
     private CarColorCycler colorCycler;
     private GameObject doorFL;
     private GameObject doorFR;
+    private GameObject doorRL;
+    private GameObject doorRR;
     private EngineSoundController engineSound;
 
-    // 👇 Add this to link to ARPlacementController
     [Header("AR Placement Reference")]
     public ARPlacementController placementController;
 
@@ -16,6 +17,8 @@ public class CarUIController : MonoBehaviour
         colorCycler = car.GetComponentInChildren<CarColorCycler>();
         doorFL = car.transform.Find("door_fl")?.gameObject;
         doorFR = car.transform.Find("door_fr")?.gameObject;
+        doorRL = car.transform.Find("door_rl")?.gameObject;
+        doorRR = car.transform.Find("door_rr")?.gameObject;
         engineSound = car.GetComponentInChildren<EngineSoundController>();
     }
 
@@ -34,16 +37,15 @@ public class CarUIController : MonoBehaviour
         }
     }
 
-    public void ToggleDoorFL()
-    {
-        if (doorFL != null)
-            doorFL.GetComponent<DoorController>()?.ToggleDoor();
-    }
+    public void ToggleDoorFL() => ToggleDoor(doorFL);
+    public void ToggleDoorFR() => ToggleDoor(doorFR);
+    public void ToggleDoorRL() => ToggleDoor(doorRL);
+    public void ToggleDoorRR() => ToggleDoor(doorRR);
 
-    public void ToggleDoorFR()
+    private void ToggleDoor(GameObject door)
     {
-        if (doorFR != null)
-            doorFR.GetComponent<DoorController>()?.ToggleDoor();
+        if (door != null)
+            door.GetComponent<DoorController>()?.ToggleDoor();
     }
 
     public void ToggleEngine()
@@ -51,16 +53,17 @@ public class CarUIController : MonoBehaviour
         engineSound?.ToggleEngine();
     }
 
-    // 👇 New methods to select cars via UI
     public void SelectCarA()
     {
-        if (placementController != null)
-            placementController.SelectCar(0);
+        placementController?.SelectCar(0);
     }
 
     public void SelectCarB()
     {
-        if (placementController != null)
-            placementController.SelectCar(1);
+        placementController?.SelectCar(1);
+    }
+    public void ResetCar()
+    {
+        placementController?.ResetPlacement();
     }
 }

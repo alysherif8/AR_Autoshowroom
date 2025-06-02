@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 3257870475657735311}
   - component: {fileID: 8463988255798010627}
   m_Layer: 0
-  m_Name: door_br
+  m_Name: door_rr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -649,7 +649,7 @@ GameObject:
   - component: {fileID: 8092162603304263264}
   - component: {fileID: 1830999398377457818}
   m_Layer: 0
-  m_Name: door_bl
+  m_Name: door_rl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
