@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
+  m_Name: CarMarkerLibrary
+  m_EditorClassIdentifier: 
+  m_GuidLow: 0
+  m_GuidHigh: 0
+  m_DataStore:
+    m_Storage: []
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 5276446222703589879
+      m_GuidHigh: 2258396674290817956
+    m_SerializedTextureGuid:
+      m_GuidLow: 6666465441848891388
+      m_GuidHigh: 12248798633012594762
+    m_Size: {x: 0.15, y: 0.08417722}
+    m_SpecifySize: 1
+    m_Name: buggati
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4926183929730071418
+      m_GuidHigh: 17171263283082092460
+    m_SerializedTextureGuid:
+      m_GuidLow: 3730181488181911005
+      m_GuidHigh: 5873611824465458056
+    m_Size: {x: 0.15, y: 0.084375}
+    m_SpecifySize: 1
+    m_Name: dodge
+    m_Texture: {fileID: 0}
