@@ -1166,7 +1166,7 @@ GameObject:
   - component: {fileID: 4381854365216251053}
   - component: {fileID: 2704697463800002520}
   m_Layer: 0
-  m_Name: Sedan1
+  m_Name: dodge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

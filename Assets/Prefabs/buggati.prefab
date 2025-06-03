@@ -767,7 +767,7 @@ GameObject:
   - component: {fileID: 1894404873762034047}
   - component: {fileID: -8949051587765673486}
   m_Layer: 0
-  m_Name: SportCar2
+  m_Name: buggati
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
