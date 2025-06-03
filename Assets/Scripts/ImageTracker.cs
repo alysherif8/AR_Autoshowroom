@@ -36,6 +36,13 @@ public class ImageTracker : MonoBehaviour
                 {
                     GameObject go = Instantiate(prefab, newImage.transform.position, newImage.transform.rotation, newImage.transform);
                     spawnedPrefabs[imageName] = go;
+
+                    CarUIController uiController = FindObjectOfType<CarUIController>();
+                    if (uiController != null)
+                    {
+                        uiController.SetCar(go);
+                        uiController.gameObject.GetComponent<Canvas>().enabled = true;
+                    }
                 }
             }
         }
