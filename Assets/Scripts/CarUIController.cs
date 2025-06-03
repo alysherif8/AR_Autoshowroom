@@ -8,6 +8,7 @@ public class CarUIController : MonoBehaviour
     private GameObject doorRL;
     private GameObject doorRR;
     private EngineSoundController engineSound;
+    private VoiceoverPlayer voiceover;
 
     [Header("AR Placement Reference")]
     public ARPlacementController placementController;
@@ -20,12 +21,12 @@ public class CarUIController : MonoBehaviour
         doorRL = car.transform.Find("door_rl")?.gameObject;
         doorRR = car.transform.Find("door_rr")?.gameObject;
         engineSound = car.GetComponentInChildren<EngineSoundController>();
+        voiceover = car.GetComponentInChildren<VoiceoverPlayer>();
     }
 
     public void ChangeCarColor()
     {
-        if (colorCycler != null)
-            colorCycler.CycleColor();
+        colorCycler?.CycleColor();
     }
 
     public void RotateWheels()
@@ -53,6 +54,11 @@ public class CarUIController : MonoBehaviour
         engineSound?.ToggleEngine();
     }
 
+    public void PlayVoiceover()
+    {
+        voiceover?.PlayVoiceover();
+    }
+
     public void SelectCarA()
     {
         placementController?.SelectCar(0);
@@ -62,6 +68,7 @@ public class CarUIController : MonoBehaviour
     {
         placementController?.SelectCar(1);
     }
+
     public void ResetCar()
     {
         placementController?.ResetPlacement();
